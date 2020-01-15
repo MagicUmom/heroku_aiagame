@@ -60,6 +60,13 @@ def controll_pannel(request):
     }
     return HttpResponse(template.render( context ,request))
 
+@login_required
+def list_page(request):
+    if request.user.is_superuser:
+        template = loader.get_template('game/list.html')
+        context = {
+        }
+        return HttpResponse(template.render( context ,request))
 
 # api palyer
 @login_required
