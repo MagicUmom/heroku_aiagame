@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    <meta name="viewport" content="user-scalable=no" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.onload = () => {
+  document.addEventListener('touchstart', (event) => {
+    if (event.touches.length > 1) {
+       event.preventDefault();
+    }
+  }, { passive: false });
+
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (event) => {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+}
+
+
+</script>
+
+<!-- <p id='demo'>THIS IS DEMO TEXT.</p>
+<button class="cutton">Click Me</button>
+<button class="cutton" onclick="myFunction()">try it</button> -->
+
+
+<div class='big_canvas'>
+    <div class='aia_title'>
+        <!-- <p>AIA紅白合戰</p> -->
+    </div>
+    <div class='odds'>
+        <div class='red'>
+            <span>紅</span>
+        </div>
+        <div class='white'>
+            <span>白</span>
+        </div>
+        <div class='odds_red'>
+            <span class='odds_red_span'>{{ odds_red }}</span>
+        </div>
+        <div class='odds_mark'>
+            <span> : </span>
+        </div>
+        <div class='odds_white'>
+            <span class='odds_white_span'>{{ odds_white }}</span>
+        </div>
+    </div>
+    <div class='pools'>
+        <button class='pool' id='pool_red' style="font-size:50px; color:#797979;" onclick="pool_button(this)">已下注</br>
+            <span id='text_pool_red' style="font-size:50px; color:#797979;">{{ user_bet_red }}</span></br>
+            <span style="color: #ea3427; font-size: 22vw;" >紅</span>
+        </button>
+        <button class='pool' id='pool_white' style="font-size:50px; color:#797979;" onclick="pool_button(this)">已下注</br>
+            <span id='text_pool_white' style="font-size:50px; color:#797979;">{{ user_bet_white }}</span></br>
+            <span style="color: #c98e27; font-size: 22vw;" >白</span>
+        </button>
+    </div>
+    <div class='bet_amount'>
+        <div>
+            <p> 下注金額 </p>
+        </div>
+        <div id='amount'>
+            <span id='amount_span' style="font-size: 50px; color: #797979;">0</span>
+        </div>
+    </div>
+    <div class='buttons_amount' style="clear:both;">
+        <button class='button_amount group_red'     value=100 onclick="bet_button(this)">100</button>
+        <button class='button_amount group_gold'    value=500 onclick="bet_button(this)">500</button>
+        <button class='button_amount group_red'     value=1000 onclick="bet_button(this)">1000</button>
+        <button class='button_amount group_gold'    value=-1 onclick="bet_button(this)">清除</button>
+    </div>
+    <div class='balance_block'>
+        <p> 剩餘金額: <span class='balance' id='balance_count'>{{ user_balance }}</span></p>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

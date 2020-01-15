@@ -1,0 +1,42 @@
+@media screen and (min-width:320px){
+
+    .main_div{
+        width: 60vw;
+        height: 50vw;
+        padding-left: 20vw;
+        padding-top: 25vw;
+    }
+    p{
+        font-size: 5vw;
+        color : #c98e27;
+    }
+
+    td{
+        font-size: 4vw;
+        color: #ea3427;
+        line-height: 5vh;
+        width:10vw;
+    }
+    .table_div{
+        width: 60vw;
+        height: 20vh;
+    }
+    form{
+        border: 1px solid #474747 ;
+    }
+    input{
+        height: 6vw;
+        margin-top: 6px;
+        margin-left: 20px;
+        width: 30vw;
+        font-size: 4vw;
+        border : 1px solid #000000;
+    }
+    .submit{
+        height: 5vh;
+        width: 20vw;
+        margin-left: 20vw;
+        background-color: #ed64cba6;
+        font-size: 5vw;
+    }
+}

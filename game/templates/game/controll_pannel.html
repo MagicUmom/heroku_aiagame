@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="{% static 'game/controll_pannel.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'game/controll_pannel.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+// the selector will match all input controls of type :checkbox
+// and attach a click event handler
+$("input:checkbox").on('click', function() {
+  // in the handler, 'this' refers to the box clicked on
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    // the name of the box is retrieved using the .attr() method
+    // as it is assumed and expected to be immutable
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    // the checked state of the group/box on the other hand will change
+    // and the current value is retrieved using .prop() method
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});
+</script>
+
+</head>
+<body>
+
+<div class='big_canvas'>
+    <div class='banner'>
+        <button class='btn_banner' id='btn_gameover' onclick="api_gameover(this)">Game_Over</button>
+        <button class='btn_banner' id='btn_newgame' onclick="api_newgame(this)">New_Game</button>
+    </div>
+    <div class='select'>
+        <button class='btn_select' id='btn_red' onclick="btnred(this)">紅</button>
+        <button class='btn_select' id='btn_white' onclick="btnwhite(this)">白</button>
+    </div>
+    <div class='confirm'>
+        <button class='btn_confirm' id='btn_confirm' onclick="api_btnconfirm(this)">Confirm</button>
+    </div>
+    <div class='lock'>
+        <button class='btn_lock' id='btn_lock' onclick="api_btnlock(this)">LOCK</button>
+    </div>
+</div>
+
+</body>
+</html>

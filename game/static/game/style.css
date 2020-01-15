@@ -1,0 +1,200 @@
+body
+{
+background-image: url("./imgs/bg.png");
+background-repeat: repeat-y repeat-x;
+background-size: 30px;
+font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+font-style: normal;
+font-weight: 600;
+
+margin: auto;
+border-left:  40px solid red;
+border-right:  40px solid red;
+padding-left: 40px;
+padding-right: 40px;
+height: 100vh;
+}
+
+.cutton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.cutton:hover {background-color: #3e8e41}
+
+.cutton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+@media screen and (min-width:320px){
+
+    .big_canvas{
+        width: inherit;
+        /* width: 100vw; */
+        /* height: 100vw; */
+        /* border: 3px solid yellow; */
+        /* border-left: 30px solid #ea3427; */
+    }
+
+    p{
+        font-size: xx-large;
+        font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+        font-style: normal;
+        font-weight: 600;
+
+    }
+    span{
+        font-size: xx-large;
+        font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+        font-style: normal;
+        font-weight: 600;
+
+    }
+    button{
+        font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+        font-style: normal;
+        font-weight: 600;
+    }
+    .aia_title{
+        content: url("./imgs/LOGO.png");
+        width: 68%;
+        max-width: 100%;
+        left: 16%;
+        padding-top: 50px;
+        text-align: center;
+        position: relative;
+    }
+
+    .odds{
+        width: 88%;
+        text-align: center;
+        padding-left: 6%;
+        padding-top: 6%;
+        height: 10vh;
+    }
+    .odds .red{
+        float:left;
+        background: #ea3427;
+        color: #FFFFFF;
+        width: 50%;
+        height: 50px;
+    }
+    .odds .white{
+        float:left;
+        background: #c98e27;
+        color: #FFFFFF;
+        width: 50%;
+        height: 50px;
+    }
+    .odds .odds_red>span{
+        float: left;
+        color: #474747;
+        font-size: 80px;
+        width: 30%;
+        padding-left: 10%;
+    }
+    .odds .odds_mark>span{
+        float: left;
+        color: #474747;
+        font-size: 80px;
+        width: 20%;
+    }
+    .odds .odds_white>span{
+        float: left;
+        color: #474747;
+        font-size: 80px;
+        width: 30%;
+        padding-right: 10%;
+
+    }
+
+    .pools{
+        padding-top: 30px;
+        width: inherit;
+        /* margin: auto; */
+    }
+    .pool{
+        /* float:left; */
+        display: inline;
+        width: 49%;
+        height: 50vw;
+        padding-bottom: 40%;
+        text-align: center;
+        background-color: #FFFFFF;
+    }
+    #pool_red{
+        border: 16px #ea3427 solid;
+    }
+    #pool_white{
+        border: 16px #c98e27 solid;
+    }
+
+    .bet_amount{
+        width: inherit;
+        text-align: center;
+
+    }
+    .bet_amount>div{
+        width: 40%;
+        float: left;
+        margin-left: 10%
+    }
+    .bet_amount>div>p{
+        font-size: 50px;
+        color: #797979;
+        /* width: 50%; */
+    }
+    #amount{
+        width: 29%;
+        float: left;
+        background-color: #FFFFFF;
+        border: 3px solid #c98e27;
+        margin-top: 50px;
+        margin-left: 5%;
+        margin-right:15%;
+        height: 70px;
+    }
+
+    .buttons_amount{
+        width: inherit;
+    }
+    .button_amount{
+        width: 24%;
+        height: 20vw;
+        font-size: 40px;
+        color: #FFFFFF;
+
+    }
+    .group_red{
+        background-color:  #ea3427;
+    }
+    .group_gold{
+        background-color:  #c98e27;
+    }
+
+    .balance_block{
+        width: inherit;
+        text-align: center;
+    }
+    .balance_block>p{
+        font-size: 60px;
+        color: #797979;
+    }
+    .balance_block>p>span{
+        font-size: 60px;
+        color: #797979;
+    }
+}
