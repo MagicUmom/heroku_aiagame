@@ -68,6 +68,14 @@ def list_page(request):
         }
         return HttpResponse(template.render( context ,request))
 
+@login_required
+def all_list(request):
+    if request.user.is_superuser:
+        template = loader.get_template('game/list.html')
+        context = {
+        }
+        return HttpResponse(template.render( context ,request))
+
 # api palyer
 @login_required
 def player_api_betting_red(request):
