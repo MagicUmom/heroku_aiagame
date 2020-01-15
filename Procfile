@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath aia aia.wsgi
+web: gunicorn aia.wsgi
